@@ -452,17 +452,25 @@
 </section>
 
 <!-- ENROLL -->
-<button class="btn filled" onclick="
-  track('enroll_click', {label:'Enroll Now'});
-  track('purchase', {
-    transaction_id: 'DMC-' + Date.now(),
-    currency: 'IDR',
-    value: 250000
-  });
-  alert('Thanks for enrolling! Demo purchase recorded.');
-">
-  Enroll Now — Rp250.000
-</button>
+<div class="enroll-strip" id="enroll">
+
+  <h2>Ready to<br><em>start learning?</em></h2>
+
+  <button class="btn filled" onclick="
+    track('enroll_click', {label:'Enroll Now'});
+
+    track('purchase', {
+      transaction_id: 'DMC-' + Date.now(),
+      currency: 'IDR',
+      value:250000
+    });
+
+    alert('Thanks for enrolling! Demo purchase recorded.');
+  ">
+    Enroll Now — Rp250.000
+  </button>
+
+</div>
 
 <!-- FOOTER -->
 <footer>
