@@ -352,21 +352,21 @@
   <p class="section-label">— Course Catalog</p>
   <div class="courses-grid">
 
-    <div class="course-card" onclick="track('course_click', {course:'Google Analytics Fundamentals'})">
+    <div class="course-card" onclick=" track('course_click', {   course:'Google Analytics Fundamentals' });  track('add_to_cart', {   item_name:'Google Analytics Fundamentals',   value:250000 }); ">
       <div class="course-num">01 /</div>
       <div class="course-title">Google Analytics Fundamentals</div>
       <div class="course-desc">Set up GA4, understand reports, and read your first real dataset from scratch.</div>
       <div class="course-level">Beginner · 4 weeks</div>
     </div>
 
-    <div class="course-card" onclick="track('course_click', {course:'Customer Journey Mapping'})">
+    <div class="course-card" onclick=" track('course_click', {   course:'Customer Journey Mapping' });  track('add_to_cart', {   item_name:'Customer Journey Mapping',   value:300000 }); ">
       <div class="course-num">02 /</div>
       <div class="course-title">Customer Journey Mapping</div>
       <div class="course-desc">Trace how users move from awareness to purchase using acquisition and engagement data.</div>
       <div class="course-level">Intermediate · 4 weeks</div>
     </div>
 
-    <div class="course-card" onclick="track('course_click', {course:'Conversion Rate Optimization'})">
+   <div class="course-card" onclick=" track('course_click', {   course:'Conversion Rate Optimization' });  track('add_to_cart', {   item_name:'Conversion Rate Optimization',   value:350000 }); ">
       <div class="course-num">03 /</div>
       <div class="course-title">Conversion Rate Optimization</div>
       <div class="course-desc">Identify drop-off points and redesign pages that actually convert visitors into buyers.</div>
@@ -452,10 +452,17 @@
 </section>
 
 <!-- ENROLL -->
-<div class="enroll-strip" id="enroll">
-  <h2>Ready to<br><em>start learning?</em></h2>
-  <button class="btn filled" onclick="track('enroll_click', {}); alert('Thanks for enrolling! This is a demo page.')">Enroll Now — Free</button>
-</div>
+<button class="btn filled" onclick="
+  track('enroll_click', {label:'Enroll Now'});
+  track('purchase', {
+    transaction_id: 'DMC-' + Date.now(),
+    currency: 'IDR',
+    value: 250000
+  });
+  alert('Thanks for enrolling! Demo purchase recorded.');
+">
+  Enroll Now — Rp250.000
+</button>
 
 <!-- FOOTER -->
 <footer>
